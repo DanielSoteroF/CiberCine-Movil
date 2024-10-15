@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "504635555114",
+    "project_id": "cibercine-f26ef",
+    "storage_bucket": "cibercine-f26ef.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:504635555114:android:0ad11e77eb900be3b3f253",
+        "android_client_info": {
+          "package_name": "com.example.cibercine"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSVfwZ0YDWpTM5G6Sm7WE3Ymw9E3FDV_o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
