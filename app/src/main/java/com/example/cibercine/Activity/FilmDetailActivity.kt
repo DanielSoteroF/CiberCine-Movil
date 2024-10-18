@@ -8,10 +8,12 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.GranularRoundedCorners
 import com.bumptech.glide.request.RequestOptions
+import com.example.cibercine.Adapter.CategoryEachFilmAdapter
 import com.example.cibercine.Models.Film
 import com.example.cibercine.R
 import com.example.cibercine.databinding.ActivityFilmDetailBinding
@@ -62,5 +64,14 @@ class FilmDetailActivity : AppCompatActivity() {
             .setBlurRadius(radius)
         binding.blurView.outlineProvider = ViewOutlineProvider.BACKGROUND
         binding.blurView.clipToOutline = true
+
+        item.Genre?.let {
+            binding.genreView.adapter = CategoryEachFilmAdapter(it)
+            binding.genreView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        }
+
+        item.Casts?.let {
+            binding.castListView.layoutManager=LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        }
     }
 }

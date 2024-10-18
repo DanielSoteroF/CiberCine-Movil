@@ -1,6 +1,8 @@
 package com.example.cibercine.Adapter
 
 import android.content.Context
+import android.content.Intent
+import android.telecom.Call.Details
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -8,6 +10,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
+import com.example.cibercine.Activity.FilmDetailActivity
 import com.example.cibercine.Models.Film
 import com.example.cibercine.databinding.ViewholderFilmBinding
 import com.example.cibercine.databinding.ViewholderSliderBinding
@@ -27,10 +30,11 @@ class FilmListAdapter(private val items:ArrayList<Film>):RecyclerView.Adapter<Fi
                 .into(binding.pic)
 
             binding.root.setOnClickListener {
-
+                val intent= Intent(context, FilmDetailActivity::class.java)
+                intent.putExtra("object", film)
+                context!!.startActivity(intent)
             }
         }
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FilmListAdapter.Viewholder {
