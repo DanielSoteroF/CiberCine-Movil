@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:padding="8dp"
-        android:background="@drawable/light_black_bg"
+        android:background="@drawable/search_bg"
         android:textColor="@color/white"
         android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -43,11 +43,11 @@ class SeatListAdapter(
                 holder.binding.seat.setTextColor(context.getColor(R.color.white))
             }
             Seat.SeatStatus.SELECTED->{
-                holder.binding.seat.setBackgroundResource(R.drawable.ic_seat_available)
+                holder.binding.seat.setBackgroundResource(R.drawable.ic_seat_selected)
                 holder.binding.seat.setTextColor(context.getColor(R.color.black))
             }
             Seat.SeatStatus.UNAVAILABLE->{
-                holder.binding.seat.setBackgroundResource(R.drawable.ic_seat_available)
+                holder.binding.seat.setBackgroundResource(R.drawable.ic_seat_unavailable)
                 holder.binding.seat.setTextColor(context.getColor(R.color.grey))
             }
         }

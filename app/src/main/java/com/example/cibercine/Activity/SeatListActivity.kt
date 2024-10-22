@@ -9,6 +9,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.cibercine.Adapter.DateAdapter
 import com.example.cibercine.Adapter.SeatListAdapter
 import com.example.cibercine.Adapter.TimeAdapter
 import com.example.cibercine.Models.Film
@@ -75,11 +76,13 @@ class SeatListActivity : AppCompatActivity() {
         binding.seatRecyclerView.isNestedScrollingEnabled=false
 
 
-        binding.TimeRecyclerview.layoutManager=LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        binding.TimeRecyclerview.layoutManager=
+            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         binding.TimeRecyclerview.adapter=TimeAdapter(generateTimesSlots())
 
-        binding.TimeRecyclerview.layoutManager=LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        binding.TimeRecyclerview.adapter=TimeAdapter(generateDates())
+        binding.dateRecyclerview.layoutManager=
+            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        binding.dateRecyclerview.adapter=DateAdapter(generateDates())
     }
 
     private fun setVariable() {

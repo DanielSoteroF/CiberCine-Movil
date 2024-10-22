@@ -14,6 +14,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.GranularRoundedCorners
 import com.bumptech.glide.request.RequestOptions
+import com.example.cibercine.Adapter.CastListAdapter
 import com.example.cibercine.Adapter.CategoryEachFilmAdapter
 import com.example.cibercine.Models.Film
 import com.example.cibercine.R
@@ -73,11 +74,14 @@ class FilmDetailActivity : AppCompatActivity() {
 
         item.Genre?.let {
             binding.genreView.adapter = CategoryEachFilmAdapter(it)
-            binding.genreView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+            binding.genreView.layoutManager =
+                LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         }
 
         item.Casts?.let {
-            binding.castListView.layoutManager=LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+            binding.castListView.adapter= CastListAdapter(it)
+            binding.castListView.layoutManager=
+                LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         }
     }
 }

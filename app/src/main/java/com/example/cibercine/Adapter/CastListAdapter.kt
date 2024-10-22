@@ -13,7 +13,8 @@ class CastListAdapter(private val cast:ArrayList<Cast>):
     RecyclerView.Adapter<CastListAdapter.Viewholder>() {
     private var context: Context?=null
 
-    inner class Viewholder(private val binding: ViewholderCastBinding):RecyclerView.ViewHolder(binding.root) {
+    inner class Viewholder(private val binding: ViewholderCastBinding):
+        RecyclerView.ViewHolder(binding.root) {
         fun bind(cast:Cast){
             context?.let {
                 Glide.with(it)
