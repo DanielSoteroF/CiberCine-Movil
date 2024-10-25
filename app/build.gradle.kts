@@ -52,6 +52,9 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
+    implementation(platform("com.google.firebase:firebase-bom:32.8.0"))
+    implementation("com.google.firebase:firebase-auth")
+
     implementation ("com.github.bumptech.glide:glide:4.12.0")
     implementation ("com.github.ismaeldivita:chip-navigation-bar:1.4.0")
     implementation ("com.github.Dimezis:BlurView:version-2.0.3")
