@@ -1,5 +1,6 @@
 package com.example.cibercine.Activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.view.View
@@ -36,6 +37,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         database = FirebaseDatabase.getInstance()
+
+        binding.btnCerrarSesion.setOnClickListener {
+            startActivity(Intent(this, LoginActivity
+            ::class.java))
+        }
 
         window.setFlags(
             WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
@@ -76,6 +82,7 @@ class MainActivity : AppCompatActivity() {
 
         })
     }
+
 
     private fun initProximas() {
         val myRef:DatabaseReference=database.getReference("Upcomming")

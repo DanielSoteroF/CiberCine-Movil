@@ -1,4 +1,4 @@
-package com.example.cibercine
+package com.example.cibercine.Activity
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,9 +7,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.cibercine.Activity.IntroActivity
-import com.example.cibercine.Activity.MainActivity
-import com.example.cibercine.databinding.ActivityIntroBinding
+import com.example.cibercine.R
 import com.example.cibercine.databinding.ActivityLoginBinding
 import com.google.firebase.auth.FirebaseAuth
 
@@ -29,7 +27,7 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.BtnIngresar.setOnClickListener {
+        binding.BtnRegistrarse.setOnClickListener {
             if (binding.EmailTxt.text.toString().isNotEmpty() && binding.PasswordTxt.text.toString().isNotEmpty()) {
                 FirebaseAuth.getInstance().createUserWithEmailAndPassword(
                     binding.EmailTxt.text.toString(), binding.PasswordTxt.text.toString()
@@ -44,7 +42,7 @@ class LoginActivity : AppCompatActivity() {
             }
         }
 
-        binding.BtnRegistrarse.setOnClickListener {
+        binding.BtnIngresar.setOnClickListener {
             if (binding.EmailTxt.text.toString().isNotEmpty() && binding.PasswordTxt.text.toString().isNotEmpty()) {
                 FirebaseAuth.getInstance().signInWithEmailAndPassword(
                     binding.EmailTxt.text.toString(), binding.PasswordTxt.text.toString()
