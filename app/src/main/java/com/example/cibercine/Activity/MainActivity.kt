@@ -6,6 +6,7 @@ import android.os.Handler
 import android.view.View
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
@@ -15,17 +16,21 @@ import com.example.cibercine.Adapter.FilmListAdapter
 import com.example.cibercine.Adapter.SliderAdapter
 import com.example.cibercine.Models.Film
 import com.example.cibercine.Models.SliderItems
+import com.example.cibercine.R
 import com.example.cibercine.databinding.ActivityMainBinding
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.ismaeldivita.chipnavigation.ChipNavigationBar
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var database: FirebaseDatabase
+    private lateinit var bottomNavigation: ChipNavigationBar
+
     private val sliderHandler = Handler()
     private val sliderRunnable = Runnable {
         binding.viewPager2.currentItem = binding.viewPager2.currentItem + 1
@@ -37,6 +42,16 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         database = FirebaseDatabase.getInstance()
+
+        // Configura el menú de navegación
+        bottomNavigation = binding.btnChipNavigationBar
+        bottomNavigation.setOnItemSelectedListener { id ->
+            when (id) {
+                R.id.btnFilms -> startActivity(Intent(this, MainActivity::class.java))
+                R.id.btnCinemas -> startActivity(Intent(this, CinemasActivity::class.java))
+                R.id.btnProfile -> startActivity(Intent(this, ProfileActivity::class.java))
+            }
+        }
 
         binding.btnCerrarSesion.setOnClickListener {
             startActivity(Intent(this, LoginActivity
@@ -65,9 +80,9 @@ class MainActivity : AppCompatActivity() {
                         items.add(issue.getValue(Film::class.java)!!)
                     }
                     if(items.isNotEmpty()){
-                        binding.recyclerViewPeliculasTop.layoutManager=LinearLayoutManager(
-                            this@MainActivity,
-                            LinearLayoutManager.HORIZONTAL,
+                        binding.recyclerViewPeliculasTop.layoutManager=GridLayoutManager(
+                            this@MainActivity,3,
+                            LinearLayoutManager.VERTICAL,
                             false
                         )
                         binding.recyclerViewPeliculasTop.adapter= FilmListAdapter(items)
