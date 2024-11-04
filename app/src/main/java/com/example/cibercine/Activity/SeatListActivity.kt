@@ -1,5 +1,6 @@
 package com.example.cibercine.Activity
 
+import android.content.Intent
 import android.icu.text.DecimalFormat
 import android.os.Bundle
 import android.view.WindowManager
@@ -83,6 +84,17 @@ class SeatListActivity : AppCompatActivity() {
         binding.dateRecyclerview.layoutManager=
             LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         binding.dateRecyclerview.adapter=DateAdapter(generateDates())
+
+        binding.buyBtn2.setOnClickListener{
+            startActivity(Intent(this, PaymentActivity
+            ::class.java))
+        }
+
+        binding.backBtn.setOnClickListener{
+            startActivity(Intent(this, MainActivity
+            ::class.java))
+        }
+
     }
 
     private fun setVariable() {
