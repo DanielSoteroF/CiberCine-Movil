@@ -35,11 +35,9 @@ class PaymentActivity : AppCompatActivity() {
             )
         }
 
-        binding.backBtn.setOnClickListener {
-            startActivity(
-                Intent(this, SeatListActivity
-                    ::class.java)
-                )
-            }
+        binding.buyBtn3.setOnClickListener{
+            startActivity(Intent(this, CheckBuyActivity
+            ::class.java))
         }
     }
+}
