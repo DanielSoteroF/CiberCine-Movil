@@ -1,3 +1,4 @@
+
 # CiberCine 🎬
 
 CiberCine es una aplicación móvil diseñada para ofrecer una experiencia fluida en la compra de boletos de cine. Los usuarios pueden explorar y seleccionar películas, visualizar los cines disponibles y gestionar su perfil personal desde la app. CiberCine es ideal para quienes buscan una manera rápida y cómoda de adquirir sus entradas de cine.
@@ -14,3 +15,4 @@ CiberCine es una aplicación móvil diseñada para ofrecer una experiencia fluid
 - **Android Studio** con **Kotlin**: Para el desarrollo de la aplicación móvil.
 - **Firebase**: Utilizado como base de datos en tiempo real para almacenar y gestionar la información de películas, boletos, usuarios y sedes de cine.
 
+![Banner CiberCine](app/src/main/res/drawable/banner.png)
