@@ -65,6 +65,14 @@
                 android:text="Empezar"
                 android:textSize="18sp"
              />
+            <TextView
+                android:id="@+id/textView23"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="© 2024 | Daniel Sotero 🚀"
+                android:textColor="#FFFFFF" />
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

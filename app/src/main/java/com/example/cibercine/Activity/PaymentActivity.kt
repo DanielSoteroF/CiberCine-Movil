@@ -3,6 +3,7 @@ package com.example.cibercine.Activity
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -29,15 +30,34 @@ class PaymentActivity : AppCompatActivity() {
         }
 
         binding.backBtn.setOnClickListener{
-            startActivity(
-                Intent(this, SeatListActivity
-            ::class.java)
-            )
+                    Intent(this, SeatListActivity
+                    ::class.java)
         }
 
         binding.buyBtn3.setOnClickListener{
-            startActivity(Intent(this, CheckBuyActivity
-            ::class.java))
+            if (binding.VisaEdit.text.toString().isEmpty() ||
+                binding.NumberCardEdit.text.toString().isEmpty() ||
+                binding.DateExpirationEdit.text.toString().isEmpty() ||
+                binding.CVVEdit.text.toString().isEmpty()) {
+
+                // Mostrar alerta si algún campo está vacío
+                showAlert()
+            } else {
+                // Si todos los campos están completos, abrir SeatListActivity
+                val intent = Intent(this, CheckBuyActivity::class.java)
+                startActivity(intent)
+            }
         }
+
+
+    }
+
+    fun showAlert(){
+        val alertDialog = AlertDialog.Builder(this)
+            .setTitle("Error")
+            .setMessage("Porfavor ingrese datos a todos los campos")
+            .setPositiveButton("Aceptar", null)
+        val dialog = alertDialog.create()
+        dialog.show()
     }
 }

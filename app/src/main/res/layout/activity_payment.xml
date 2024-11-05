@@ -62,7 +62,7 @@
                 android:text="Informacion de Tarjeta" />
 
             <EditText
-                android:id="@+id/editTextText"
+                android:id="@+id/VisaEdit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -80,7 +80,7 @@
                 />
 
             <EditText
-                android:id="@+id/editTextText2"
+                android:id="@+id/NumberCardEdit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -97,7 +97,7 @@
                 android:hint="Numero de Tarjeta"/>
 
             <EditText
-                android:id="@+id/editTextText3"
+                android:id="@+id/DateExpirationEdit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -114,7 +114,7 @@
                 android:hint="Fecha de Vencimiento" />
 
             <EditText
-                android:id="@+id/editTextText4"
+                android:id="@+id/CVVEdit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
